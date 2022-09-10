@@ -8,10 +8,11 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start",
     "type-check": "tsc",
     "lint": "eslint --ignore-path .gitignore \"src/**/*.+(ts|js|tsx)\"",
-    "format": "prettier --ignore-path .gitignore \"src/**/*.+(ts|js|tsx)\" --write"
+    "format": "prettier --ignore-path .gitignore \"src/**/*.+(ts|js|tsx)\" --write",
+    "start": "NODE_ENV=production node server.js",
+    "export": "npm run build && next export"
   },
   "lint-staged": {
     "./src/**/*.{ts,js,jsx,tsx}": [
