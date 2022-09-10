@@ -43,7 +43,7 @@ export type PostsResponse =
       data: SanityPost[];
     };
 
-export const fetchAllPosts = async (): Promise<RecentPostsResponse> => {
+export const fetchAllPosts = async (): Promise<PostsResponse> => {
   const response = await client.fetch(
     `*[_type == "post"] | order(id asc)`
   );
