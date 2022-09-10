@@ -2,4 +2,4 @@ Kodekonkurranse NHN Hackathon ✨
 
 ## Deploy
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/cb974d0f-88c5-4f2e-be6d-07cb46ab53bd/deploy-status)](https://app.netlify.com/sites/objective-kalam-679e9a/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/5c5351e2-194b-425e-8f40-8522cc6c8614/deploy-status)](https://app.netlify.com/sites/delightful-kangaroo-c6f55f/deploys)
