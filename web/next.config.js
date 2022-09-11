@@ -35,6 +35,7 @@ module.exports = {
 
           return {
             "/": { page: "/" },
+            "/highscore": { page: "/highscore" },
             ...acc,
             ...page,
             ...input
