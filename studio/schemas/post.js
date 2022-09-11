@@ -36,5 +36,21 @@ export default {
       title: 'Body',
       type: 'blockContent',
     },
+    {
+      name: 'inputfile',
+      type: 'object',
+      fields: [
+        {
+          type: 'reference',
+          name: 'inputfile',
+          to: [{type: 'input'}]
+        }
+      ]
+    },
+    {
+      name: 'svar',
+      title: 'Svar',
+      type: 'number',
+    },
   ]
 }

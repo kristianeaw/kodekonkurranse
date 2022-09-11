@@ -1,10 +1,6 @@
 import Head from "next/head";
 import { useState, useEffect } from "react";
-import {
-  fetchAllPosts,
-  getImageUrl,
-  PostsResponse,
-} from "../sanityClient";
+import { fetchAllPosts, PostsResponse } from "../sanityClient";
 import styles from "../styles/Home.module.css";
 
 export default function Home() {
@@ -12,15 +8,13 @@ export default function Home() {
     type: "LOADING",
   });
 
-  console.log(postsState);
-
   useEffect(() => {
     fetchRecentPosts();
   }, []);
 
   const fetchRecentPosts = () => {
     fetchAllPosts().then((response) => setPostsState(response));
-  }
+  };
 
   return (
     <div className={styles.container}>
@@ -29,17 +23,11 @@ export default function Home() {
       </Head>
 
       <header className={styles.header}>
-
-        <div className={styles.headerInner}>
-          <h1>Hackathon - Kodekonkurranse</h1>
-        </div>
-
+        <h1>KODEKONKURRANSE<span>.</span></h1>
       </header>
 
       <main className={styles.main}>
-
-        <PostsSection postsState={postsState}/>
-        
+        <PostsSection postsState={postsState} />
       </main>
     </div>
   );
@@ -60,15 +48,11 @@ export const PostsSection = ({ postsState }: PostsSectionState) => {
         return (
           <a href={`/oppgave/${post.slug.current}`} key={post.slug.current} className={styles.post}>
             <div>
-              <h3 className={styles.postTitle}>{post.title}</h3>
+              <h3 className={styles.postTitle}>{post.title.toUpperCase()}</h3>
             </div>
-
-            {
-              post.mainImage && 
-              <div className={styles.postImage}>
-                <img src={getImageUrl(post.mainImage).url()} />
-              </div>
-            }
+            <div className={styles.emoji}>
+              ⭐️
+            </div>
           </a>
         );
       })}

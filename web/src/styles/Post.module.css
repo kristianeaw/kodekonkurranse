@@ -1,58 +1,79 @@
+.container {
+  background-color: #111111ff;
+  color: #ffffff;
+  min-height: 100vh;
+  padding: 1rem;
+  font-size: 1.1rem;
+}
+
+.tilbake {
+  padding: 1rem;
+  font-size: 1.1rem;
+  display: inline-block;
+  font-family: Verdana, sans-serif;
+}
+
 .post {
-  padding: 0 2rem 3rem;
+  padding-top: 4rem;
   line-height: 1.3;
+  display: flex;
+  flex-direction: column;
 }
 
-.post h1 {
-  font-size: 2rem;
-  line-height: 1.4;
+.title {
+  display: flex;
+  justify-content: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  font-family: Verdana, sans-serif;
+  color: #6cff6c;
 }
 
-.articleBody h1, .articleBody h2, .articleBody h3, .articleBody h4, .articleBody p, .articleBody ul {
-  padding-bottom: 1.4rem;
+.answer {
+  display: flex;
+  padding-top: 2rem;
+  margin-bottom: 0.8rem;
 }
 
-.articleBody h2 {
-  font-size: 1.6rem;
-  line-height: 1.3;
+.input {
+  margin-right: 0.5rem;
 }
 
-.articleBody h3 {
+.answerButton {
+  border: 1px solid #333333ff;
+  padding: 0.3rem;
+}
+
+.correct {
+  color: #6cff6c;
+  font-size: 1.3rem;
+}
+
+.wrong {
+  color: #de2020;
+}
+
+.inputLink {
+  padding-top: 3rem;
+  text-decoration: underline;
+}
+
+.articleBody {
+  padding: 4rem 2rem 0;
+}
+
+.articleBody p {
   font-size: 1.2rem;
+  padding-bottom: 0.8rem;
 }
 
-.articleBody h4 {
+.articleBody blockquote {
+  margin-left: 20px;
+  font-style: italic;
+  font-family: monospace;
   font-size: 1.1rem;
 }
 
 .articleBody strong {
   font-weight: bold;
-}
-
-.articleBody em {
-  font-style: italic;
-}
-
-.articleBody a {
-  display: inline;
-  text-decoration: underline;
-}
-
-.articleBody ul {
-  list-style: disc;
-  margin-left: 1.2rem;
-}
-
-.image {
-  padding: 0.2rem 0 1.5rem;
-}
-
-.image img {
-  max-width: 100%;
-}
-
-.date {
-  font-size: 0.9rem;
-  font-style: italic;
-  padding-top: 1rem;
 }

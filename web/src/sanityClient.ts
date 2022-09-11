@@ -6,6 +6,7 @@ export interface SanityPost {
   title: String;
   body: [];
   mainImage?: {};
+  svar: number;
 }
 
 export type PostResponse =
@@ -55,6 +56,64 @@ export const fetchAllPosts = async (): Promise<PostsResponse> => {
     data: response,
   };
 };
+
+export interface InputPost {
+  body: [];
+}
+
+export type InputResponse =
+  | {
+      type: "NOT_FOUND";
+    }
+  | {
+      type: "DATA";
+      data: InputPost;
+    };
+
+export const fetchInput = async (slug: string): Promise<InputResponse> => {
+  const response = await client.fetch(
+    `*[_type == "input" && slug.current == $slug][0]`,
+    { slug }
+  );
+  if (response === null) {
+    return { type: "NOT_FOUND" };
+  }
+  return {
+    type: "DATA",
+    data: response,
+  };
+};
+
+export interface Highscore {
+  poeng: number;
+  navn: string;
+}
+
+export type HighscoreResponse =
+  | {
+      type: "ERROR";
+    }
+  | {
+      type: "LOADING";
+    }
+  | {
+      type: "DATA";
+      data: Highscore[];
+    };
+
+export const fetchHighscore = async (): Promise<HighscoreResponse> => {
+  const response = await client.fetch(
+    `*[_type == "poeng"] | order(id desc)`
+  );
+  if (response === null) {
+    return { type: "ERROR" };
+  }
+  return {
+    type: "DATA",
+    data: response,
+  };
+};
+
 
 export const getImageUrl = (source: {}) => {
   return imageUrlBuilder(client).image(source);

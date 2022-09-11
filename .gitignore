@@ -11,3 +11,5 @@ web/.env.production
 #misc
 out
 .DS_Store
+
+/løsninger
