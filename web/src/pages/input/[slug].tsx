@@ -14,7 +14,7 @@ const Input = (props: InputResponse) => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>{post.title} - Kodekonkurranse</title>
+        <title>Kodekonkurranse</title>
       </Head>
 
       <div className={styles.input}>
