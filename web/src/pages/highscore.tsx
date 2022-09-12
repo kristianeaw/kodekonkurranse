@@ -43,6 +43,7 @@ export const HighscoreSection = ({ highscoreState }: HighscoreSectionState) => {
   if (highscoreState.type === "ERROR" || highscoreState.type === "LOADING") {
     return <></>;
   }
+  
 
   const renderEmoji = (index: number) => {
     console.log(index);
