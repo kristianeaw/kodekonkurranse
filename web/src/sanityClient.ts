@@ -103,7 +103,7 @@ export type HighscoreResponse =
 
 export const fetchHighscore = async (): Promise<HighscoreResponse> => {
   const response = await client.fetch(
-    `*[_type == "poeng"] | order(id desc)`
+    `*[_type == "poeng"] | order(poeng desc)`
   );
   if (response === null) {
     return { type: "ERROR" };

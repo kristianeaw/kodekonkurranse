@@ -43,28 +43,31 @@ export const HighscoreSection = ({ highscoreState }: HighscoreSectionState) => {
   if (highscoreState.type === "ERROR" || highscoreState.type === "LOADING") {
     return <></>;
   }
-  
 
   const renderEmoji = (index: number) => {
     console.log(index);
     if (index === 0) {
-        return "🥇";
+      return "🥇";
     }
     if (index === 1) {
-        return "🥈";
+      return "🥈";
     }
     if (index === 2) {
-        return "🥉";
+      return "🥉";
     }
     return index;
-  }
+  };
 
   return (
     <section className={styles.highscores}>
       {highscoreState.data.map((poeng, i) => {
         return (
           <div className={styles.poeng} key={poeng.navn}>
-            <div className={styles.emoji}>{renderEmoji(i)}</div> <div><b>{poeng.navn}</b></div> <div>{poeng.poeng}</div>
+            <div className={styles.emoji}>{renderEmoji(i)}</div>{" "}
+            <div>
+              <b>{poeng.navn}</b>
+            </div>{" "}
+            <div>{poeng.poeng}</div>
           </div>
         );
       })}
